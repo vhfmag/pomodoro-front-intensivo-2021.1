@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: grid;
+  place-items: stretch;
+  place-content: stretch;
+
+  --vermelho: #f87070;
+  --ciano: #70f3f8;
+  --roxo: #d881f8;
+  --branco: #ffffff;
+  --claro1: #d7e0ff;
+  --claro2: #eff1fa;
+  --escuro1: #1e213f;
+  --escuro2: #161932;
+
+  --cor-de-texto: var(--claro1);
+  color: var(--cor-de-texto);
+
+  --cor-de-destaque: var(--vermelho);
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: center;
+  color: inherit;
+  font-family: inherit;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+  background-color: var(--escuro1);
+  min-height: 100vh;
+  justify-content: space-between;
+  padding: 48px 48px 56px;
+}
+
+.App > * {
+  z-index: 1;
+}
+
+.modo {
+  display: flex;
+  gap: 8px;
+  background-color: var(--escuro2);
+  padding: 8px;
+  border-radius: 32px;
+}
+
+.modo button {
+  border-radius: 26.5px;
+  padding: 16px 26px;
+  font-weight: bold;
+  color: inherit;
+  font-size: 14px;
+}
+
+.modo button.selecionado {
+  background-color: var(--cor-de-destaque);
+  color: var(--escuro2);
+}
+
+.contagem {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-image: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  padding: 22px;
+
+  display: grid;
+  place-content: stretch;
+  z-index: 0;
+}
+
+.firula {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  gap: 16px;
+  background-color: var(--escuro2);
+  border-radius: 50%;
+  padding: 60px;
+}
+
+.tempo {
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Space Mono, monospace;
+}
+
+.contagem button {
+  color: inherit;
+  font-size: 16px;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (max-width: 580px) {
+  .contagem {
+    padding: 16px;
+  }
+
+  .firula {
+    padding: 38px;
+  }
+
+  .tempo {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 580px) {
+  .firula {
+    padding: 16px;
+  }
+
+  .tempo {
+    font-size: 70px;
+  }
+}
+
+.kumbh {
+  font-family: Kambh Sans, sans-serif;
+}
+
+.robot {
+  font-family: Roboto Slab, sans-serif;
+}
+
+.space {
+  font-family: Space Mono, monospace;
+}
+
+form button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--claro2);
+}
+
+button.cor {
+  background-color: var(--cor-de-destaque);
+  display: grid;
+  place-content: center;
+}
+
+button.cor img {
+  display: none;
+}
+
+button.cor.selecionado img {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 12, 28, 0.5);
+
+  display: grid;
+  place-content: center;
+  padding: 56px 24px;
+}
+
+.overlay.fechado {
+  display: none;
+}
+
+.modal {
+  background-color: var(--branco);
+  color: var(--escuro2);
+
+  display: grid;
+  border-radius: 15px;
+  max-width: 540px;
+}
+
+.modal header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.modal form {
+  padding: 0 24px;
+}
+
+.modal form > section {
+  padding: 24px 0;
+}
+
+.modal section.vertical {
+  display: grid;
+}
+
+.modal h3 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 13px;
+}
+
+.modal .vertical h3 {
+  margin-bottom: 22px;
+}
+
+.lado-a-lado {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.lado-a-lado .label {
+  display: block;
+  color: var(--escuro1);
+  opacity: 0.6;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.lado-a-lado input {
+  width: 100%;
+}
+
+.modal .horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.modal .botoes {
+  display: flex;
+  gap: 16px;
+}
+
+.modal button.selecionado {
+  background-color: var(--escuro2);
+  color: var(--branco);
+}
